@@ -3,11 +3,11 @@ public class Luta {
     private int rounds;
     private boolean aprovada;
 
-    public Luta(Lutador desafiado, Lutador desafiante, int rounds, boolean aprovada) {
+    public Luta(Lutador desafiado, Lutador desafiante, int rounds) {
         this.desafiado = desafiado;
         this.desafiante = desafiante;
         this.rounds = rounds;
-        this.aprovada = aprovada;
+        this.aprovada = false;
     }
 
     public Lutador getDesafiado() {
@@ -43,12 +43,44 @@ public class Luta {
     }
 
     public void marcarLuta(Lutador desafiante, Lutador desafiado, int rounds){
-        this.desafiante = desafiante;
-        this.desafiado = desafiado;
-        this.rounds = rounds;
+        if( desafiante.getCategoria().equals(desafiado.getCategoria()) && desafiante != desafiado){
+            aprovada = true;
+            this.desafiado = desafiado;
+            this.desafiante = desafiante;
+        } else{
+            aprovada = false;
+            this.desafiante = null;
+            this.desafiado = null;
+        }
     }
 
     public void lutar(){
+        if (aprovada){
+            int resultadoLuta = (int) (1 + Math.random() * 3);
+            System.out.println("Vamos conhecer o desafiante:\n");
+            desafiante.apresentar();
+            System.out.println("Agora iremos conhecer o desafiado:\n");
+            desafiado.apresentar();
 
+            switch (resultadoLuta){
+                case 1:
+                    System.out.println("A luta empatou");
+                    desafiante.empatarLuta();
+                    desafiado.empatarLuta();
+                    break;
+                case 2:
+                    System.out.println("O desafiado ganhou");
+                    desafiante.perderLuta();
+                    desafiado.ganharLuta();
+                    break;
+                case 3:
+                    System.out.println("O desafiante ganhou");
+                    desafiado.perderLuta();
+                    desafiante.ganharLuta();
+                    break;
+            }
+
+
+        }
     }
 }
