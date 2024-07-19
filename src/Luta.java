@@ -66,17 +66,18 @@ public class Luta {
 
             switch (resultadoLuta){
                 case 1:
-                    System.out.println("\nResultado da luta: empate\n");
+                    System.out.println("\nApós " + rounds + " rounds de luta...")
+                    System.out.println("Resultado da luta: empate\n");
                     desafiante.empatarLuta();
                     desafiado.empatarLuta();
                     break;
                 case 2:
-                    System.out.println("\nResultado da luta: vitoria do desafiado\n");
+                    System.out.println("Resultado da luta: vitoria do desafiado\n");
                     desafiante.perderLuta();
                     desafiado.ganharLuta();
                     break;
                 case 3:
-                    System.out.println("\nResultado da luta: vitoria do desafiante\n");
+                    System.out.println("Resultado da luta: vitoria do desafiante\n");
                     desafiado.perderLuta();
                     desafiante.ganharLuta();
                     break;
