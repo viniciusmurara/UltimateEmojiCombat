@@ -3,6 +3,8 @@ public class Luta {
     private int rounds;
     private boolean aprovada;
 
+    public Luta(){}
+
     public Luta(Lutador desafiado, Lutador desafiante, int rounds) {
         this.desafiado = desafiado;
         this.desafiante = desafiante;
@@ -57,24 +59,24 @@ public class Luta {
     public void lutar(){
         if (aprovada){
             int resultadoLuta = (int) (1 + Math.random() * 3);
-            System.out.println("Vamos conhecer o desafiante:\n");
+            System.out.println("\nVamos conhecer o desafiante:");
             desafiante.apresentar();
-            System.out.println("Agora iremos conhecer o desafiado:\n");
+            System.out.println("\nAgora iremos conhecer o desafiado:");
             desafiado.apresentar();
 
             switch (resultadoLuta){
                 case 1:
-                    System.out.println("A luta empatou");
+                    System.out.println("\nResultado da luta: empate\n");
                     desafiante.empatarLuta();
                     desafiado.empatarLuta();
                     break;
                 case 2:
-                    System.out.println("O desafiado ganhou");
+                    System.out.println("\nResultado da luta: vitoria do desafiado\n");
                     desafiante.perderLuta();
                     desafiado.ganharLuta();
                     break;
                 case 3:
-                    System.out.println("O desafiante ganhou");
+                    System.out.println("\nResultado da luta: vitoria do desafiante\n");
                     desafiado.perderLuta();
                     desafiante.ganharLuta();
                     break;

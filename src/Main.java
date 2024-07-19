@@ -15,11 +15,18 @@ public class Main {
         lutadores[5] = new Lutador("Nerdaart", "EUA", 30, 12,
                 2, 4, 1.81, 105.7);
 
-        System.out.println("Apresentação Lutador 1");
-        lutadores[0].apresentar();
+        Luta luta[] = new Luta[3];
 
-        System.out.println("\nStatus Lutador 1");
+        luta[0] = new Luta();
+        luta[1] = new Luta();
+        luta[2] = new Luta();
+
+        luta[0].marcarLuta(lutadores[0], lutadores[1], 3);
+        luta[0].lutar();
+
+        System.out.print("Status atualizado dos lutadores");
         lutadores[0].status();
+        lutadores[1].status();
 
     }
 }

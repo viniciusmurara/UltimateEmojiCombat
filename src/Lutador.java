@@ -109,13 +109,13 @@ public class Lutador {
     }
 
     public void apresentar(){
-        System.out.println( "lutador: " + getNome() + "\norigem: " + getNacionalidade() +
+        System.out.println( "\nlutador: " + getNome() + "\norigem: " + getNacionalidade() +
                 "\nidade: " + getIdade() + "\naltura: " + getAltura() + "m" + "\npeso: " + getPeso() + "kg" +
                 "\nvitorias: " + getVitorias() + "\nderrotas: " + getDerrotas() + "\nempates: " + getEmpates());
     }
 
     public void status(){
-        System.out.println("nome: " + getNome() + "\ncategoria: " + getCategoria() + "\n" + getVitorias() +
+        System.out.println("\nlutador: " + getNome() + "\ncategoria: " + getCategoria() + "\n" + getVitorias() +
                 " vitoria(s)\n" + getDerrotas() + " derrota(s)\n" + getEmpates() + " empate(s)");
 
     }
